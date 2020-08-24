@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+        <title>Rotas de entrega</title>
+        <!-- font -->
+        <script src="https://kit.fontawesome.com/66b134527a.js" crossorigin="anonymous"></script>
+        <!-- custom css -->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-center">
+                <span class="nav-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+                <img class="logo" src="./images/logo.png" alt="">
+                <div class="cart-btn">
+                    <span class="nav-icon">
+                        <i class="fas fa-cart-plus"></i>
+                    </span>
+                    <div class="cart-items">0</div>
+                </div>
+            </div>
+        </nav>
+    	<div id="site">
+            <form method="POST" action="map.html">
+            <legend>Rotas de entrega</legend>
+                <div class="orders">
+                    <div class="order"> 
+                        <p>Pedido: #230820201630</p>
+                        <p>Itens: 45</p>
+                        <p>Endereço: R. Albino Rodrigues Costa, 8 - Vila Mariana</p>
+                    </div>
+                    <br/>
+                    <div class="order">    
+                        <p>Pedido: #230820201642</p>
+                        <p>Itens: 71</p>
+                        <p>Endereço: R. França Pinto, 832 - Vila Mariana</p>
+                    </div>
+                </div>
+            <input class="banner-btn" type="submit" id="btnEnviar" name="btnEnviar" value="Calcular" />
+        </form>
+            <br/>
+        
+            <div id="map"></div>
+            
+            <div id="route"></div>
+        
+        </div>
+        
+        <script src="js/jquery.min.js"></script>
+		
+        <!-- Maps API Javascript -->
+        <!-- <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFDJ_YNw_cfnuxnOyO3PY7LZu4G_Fj1F8&callback=initMap">
+        </script>
+
+ 
+        <!-- Arquivo de inicialização do mapa -->
+		<script src="js/map.js"></script>
+    </body>
+</html>
