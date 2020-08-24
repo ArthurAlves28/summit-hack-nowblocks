@@ -1,5 +1,3 @@
-// variables
-
 const cartBtn = document.querySelector('.cart-btn');
 const closeCartBtn = document.querySelector('.close-cart');
 const clearCartBtn = document.querySelector('.clear-cart');
@@ -12,12 +10,12 @@ const scheduleDelivery = document.querySelector(".scheduleDelivery");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
 
-// cart 
+// carrinho
 let cart = [];
-// buttons
+// botoes
 let buttonsDOM = [];
 
-// getting the products
+// recuperando produtos do JSON
 class Products {
     async getProducts(){
         try {
@@ -37,7 +35,7 @@ class Products {
         }
     }
 }
-// display products
+// exibindo produtos
 class UI {
     displayProducts(products) {
         let result = "";
@@ -77,17 +75,11 @@ class UI {
             button.addEventListener("click", (event) => {
                 event.target.innerText = "No carrinho";
                 event.target.disabled = true;
-                // get product from products
                 let cartItem = { ...Storage.getProduct(id), amount: 1};
-                // add product to the cart
                 cart = [...cart, cartItem];
-                // save cart in local storage
                 Storage.saveCart(cart);
-                // set cart item
                 this.setCartValues(cart);
-                // display cart item
                 this.addCartItem(cartItem);
-                // show the cart
                 this.showCart();
             })
         });
@@ -152,11 +144,11 @@ class UI {
         cartDOM.classList.remove('showCart');
     }
     cartLogic() {
-        // clear cart button
+        // limpar o carrinho
         clearCartBtn.addEventListener('click', () =>  { 
             this.clearCart();
         });
-        // cart functionality
+        // funcionalidades do carrinho
         cartContent.addEventListener('click', event => {
             if(event.target.classList.contains('remove-item'))
             {
@@ -211,7 +203,6 @@ class UI {
         return buttonsDOM.find(button => button.dataset.id === id);
     }
 }
-// local storage
 class Storage {
     static saveProducts(products) {
         localStorage.setItem("produtos", JSON.stringify(products));
@@ -231,9 +222,9 @@ class Storage {
 document.addEventListener("DOMContentLoaded", () => {
     const ui = new UI()
     const products = new Products();
-    // setup app
+
     ui.setupAPP();
-    // get all products
+    
     products.getProducts().then(products => {
         ui.displayProducts(products);
     Storage.saveProducts(products);
