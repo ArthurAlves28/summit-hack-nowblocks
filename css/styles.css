@@ -265,26 +265,18 @@ a:link {
 /* --------------- End of Cart ---------------- */
 /*---------------Rotas de entrega---------------*/
 #site { 
-    width: 320px; 
-    margin: 20px auto 0 auto;  
+    width: 1100px; 
+    margin: 20px auto 0 auto  
 }
 #map { 
-    width: 320px; 
+    width: 600px; 
     height: 400px; 
     float: left 
 }
 #route { 
-    width: 320px; 
-    height: 820px; 
+    width: 300px; 
+    height: 400px; 
     float: right; 
     overflow: scroll 
-}
-.orders { 
-    border: 0;
-    /*display: grid;*/
-    align-items: center;
-    /*grid-template-columns: auto 1fr auto;
-    grid-column-gap: 1.5rem;*/
-    margin: 1.5rem 0;
 }
 /*------------Fim de rotas de entrega-----------*/
